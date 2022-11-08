@@ -1,3 +1,10 @@
-// Player class
-// constructor - properties should include: id (ex: 'one'), token (ex: '⭐️'), wins (ex: 0)
-// increaseWins - increases the count of the player’s wins
+class Player {
+    constructor(id, token) {
+        this.id = id // ex. 1
+        this.token = token // ex. '🌞🌝' || '🤍💚💙💜🖤'
+        this.wins = 0
+    }
+    increaseWins() {
+        this.wins++
+    }
+}
