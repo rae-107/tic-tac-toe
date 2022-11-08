@@ -1,0 +1,94 @@
+/* Global */
+* {
+    color: darkslategray;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fauna One', serif;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Player sides */
+.player-sides {
+    font-size: 20px;
+    height: 100vh;
+    width: 25%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;
+    /* padding: 30px 0; */
+    background-image: linear-gradient(
+  0deg,
+  hsl(196deg 76% 53%) 0%,
+  hsl(204deg 80% 65%) 10%,
+  hsl(215deg 83% 74%) 20%,
+  hsl(231deg 80% 81%) 30%,
+  hsl(257deg 72% 83%) 40%,
+  hsl(284deg 61% 83%) 50%,
+  hsl(227deg 100% 85%) 60%,
+  hsl(196deg 100% 67%) 70%,
+  hsl(188deg 100% 50%) 80%,
+  hsl(177deg 100% 45%) 90%,
+  hsl(155deg 78% 53%) 100%
+);
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+.star-side {
+    /* border: 1px solid khaki; */
+}
+
+.heart-side {
+    /* border: 1px solid lightcoral; */
+}
+
+/* Main board */
+h1 {
+    margin-top: 60px;
+}
+
+.board {
+    background-color: gainsboro;
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.board-grid {
+    background-image: linear-gradient(
+  0deg,
+  hsl(196deg 76% 53%) 0%,
+  hsl(204deg 80% 65%) 10%,
+  hsl(215deg 83% 74%) 20%,
+  hsl(231deg 80% 81%) 30%,
+  hsl(257deg 72% 83%) 40%,
+  hsl(284deg 61% 83%) 50%,
+  hsl(227deg 100% 85%) 60%,
+  hsl(196deg 100% 67%) 70%,
+  hsl(188deg 100% 50%) 80%,
+  hsl(177deg 100% 45%) 90%,
+  hsl(155deg 78% 53%) 100%
+);
+    display: grid;
+    height: 60vh;
+    width: 70%;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto; 
+    gap: 6px;
+}
+
+
+.boxes {
+    background-color: gainsboro;
+    height: 140px;
+    width: 150px;
+}
