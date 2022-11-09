@@ -1,16 +1,11 @@
 class Game {
     constructor() {
-        this.playerOne = new Player(1, '🤍')
-        this.playerTwo = new Player(2, '🖤')
+        this.playerOne = new Player(1, '💜')
+        this.playerTwo = new Player(2, '💙')
         this.currentPlayer = this.playerOne
         this.board = ['','','','','','','','','']
     }
     playToken() {
-        // for (var i = 0; i < this.board.length; i++) {
-        //     this.board[i] = this.currentPlayer.token
-        //     console.log(this.board)
-        //     console.log(this.board[i])
-        // }
         this.currentPlayersTurn()
     }
     currentPlayersTurn() {
@@ -53,8 +48,6 @@ class Game {
             this.currentPlayer.increaseWins()
             console.log(`${this.currentPlayer.token} won!`)
             playerPrompt.innerText = `${this.currentPlayer.token} won!`
-        } else {
-            playerPrompt.innerText = 'Cat\'s game'
         }
     }
     resetGame() {
