@@ -1,6 +1,7 @@
 /* Global */
 * {
     color: darkslategray;
+    /* color: #d4af37; */
     margin: 0;
     padding: 0;
     font-family: 'Fauna One', serif;
@@ -34,6 +35,7 @@ body {
   hsl(177deg 100% 45%) 90%,
   hsl(155deg 78% 53%) 100%
 );
+    /* background-color: olive; */
 }
 
 h2 {
@@ -78,17 +80,19 @@ h1 {
   hsl(177deg 100% 45%) 90%,
   hsl(155deg 78% 53%) 100%
 );
+/* background-color: #d4af37; */
     display: grid;
     height: 60vh;
     width: 70%;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto; 
-    gap: 6px;
+    gap: 4px;
 }
 
 
 .boxes {
+    /* border: 1px solid rebeccapurple; */
     background-color: gainsboro;
-    height: 140px;
-    width: 150px;
+    height: 100%;
+    width: 100%;
 }
