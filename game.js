@@ -4,15 +4,30 @@ class Game {
         this.playerTwo = new Player(2, '🌝')
         this.currentPlayer = this.playerOne
         this.otherPlayer = this.playerTwo
-        this.board = ['','','','','','','','','']
+        this.board = ['', '', '', '', '', '', '', '', '']
+        this.tileCounter = 0
+        this.startingPlayer = this.playerOne
+    }
+    goesFirst() {
+        if (this.startingPlayer === this.playerOne) {
+            this.otherPlayer = this.playerOne
+            this.startingPlayer = this.playerTwo
+            this.currentPlayer = this.startingPlayer
+        } else {
+            this.otherPlayer = this.playerTwo
+            this.startingPlayer = this.playerOne
+            this.currentPlayer = this.startingPlayer
+        } 
     }
     playToken(i) {
-            if (this.board[i] !== this.playerOne.token && this.board[i] !== this.playerTwo.token) {
-            this.board[i] = this.currentPlayer.token
-            this.currentPlayersTurn()
-            editPrompt()
-            }
-    }
+        if (playerPromt.innerText === `${ticTacToe.otherPlayer.token} wins` || playerPromt.innerText === `${ticTacToe.currentPlayer.token} wins`) {
+       }
+       else if (this.board[i] !== this.playerOne.token && this.board[i] !== this.playerTwo.token) {
+           this.board[i] = this.currentPlayer.token
+           this.currentPlayersTurn()
+           editPrompt()
+       }
+   }
     currentPlayersTurn() {
         if (this.currentPlayer === this.playerOne) {
             this.currentPlayer = this.playerTwo
@@ -22,60 +37,44 @@ class Game {
             this.otherPlayer = this.playerTwo
         }
     }
-    decideWinner() {
-        if (this.board[0] === this.otherPlayer.token && this.board[1] === this.otherPlayer.token && this.board[2] === this.otherPlayer.token) {
-            // this.otherPlayer.increaseWins()
-            this.otherPlayer.increaseWins()
-            console.log('0,1,2')
-            // this.resetGame()
-            return `${this.otherPlayer.token} wins`
-        } else if (this.board[3] === this.otherPlayer.token && this.board[4] === this.otherPlayer.token && this.board[5] === this.otherPlayer.token) {
-            // this.otherPlayer.increaseWins()
-            this.otherPlayer.increaseWins()
-            console.log('3,4,5')
-            // this.resetGame()
-            return `${this.otherPlayer.token} wins`
-        } else if (this.board[6] === this.otherPlayer.token && this.board[7] === this.otherPlayer.token && this.board[8] === this.otherPlayer.token) {
-            // this.otherPlayer.increaseWins()
-            this.otherPlayer.increaseWins()
-            console.log('6,7,8')
-            // this.resetGame()
-            return `${this.otherPlayer.token} wins`
-        } else if (this.board[0] === this.otherPlayer.token && this.board[3] === this.otherPlayer.token && this.board[6] === this.otherPlayer.token) {
-            // this.otherPlayer.increaseWins()
-            this.otherPlayer.increaseWins()
-            console.log('0,3,6')
-            // this.resetGame()
-            return `${this.otherPlayer.token} wins`
-        } else if (this.board[1] === this.otherPlayer.token && this.board[4] === this.otherPlayer.token && this.board[7] === this.otherPlayer.token) {
-            // this.otherPlayer.increaseWins()
-            this.otherPlayer.increaseWins()
-            console.log('1,4,7')
-            // this.resetGame()
-            return `${this.otherPlayer.token} wins`
-        } else if (this.board[2] === this.otherPlayer.token && this.board[5] === this.otherPlayer.token && this.board[8] === this.otherPlayer.token) {
-            // this.otherPlayer.increaseWins()
-            this.otherPlayer.increaseWins()
-            console.log('2,5,8')
-            // this.resetGame()
-            return `${this.otherPlayer.token} wins`
-        } else if (this.board[0] === this.otherPlayer.token && this.board[4] === this.otherPlayer.token && this.board[8] === this.otherPlayer.token) {
-            // this.otherPlayer.increaseWins()
-            this.otherPlayer.increaseWins()
-            console.log('0,4,8')
-            // this.resetGame()
-            return `${this.otherPlayer.token} wins`
-        } else if (this.board[2] === this.otherPlayer.token && this.board[4] === this.otherPlayer.token && this.board[6] === this.otherPlayer.token) {
-            // this.otherPlayer.increaseWins()
-            this.otherPlayer.increaseWins()
-            console.log('2,4,6')
-            // this.resetGame()
-            return `${this.otherPlayer.token} wins`
+    decideWinner(one, two, three) {
+        if (this.board[one] === this.otherPlayer.token && 
+            this.board[two] === this.otherPlayer.token && 
+            this.board[three] === this.otherPlayer.token) {
+            this.otherPlayer.increaseWins()   
+            return true
+        }
+    }
+    decideDraw() {
+        for (var i = 0; i < this.board.length; i++) {
+            if (this.board[i] === this.playerOne.token || this.board[i] === this.playerTwo.token) {
+                this.tileCounter++
+                return this.tileCounter
+            }
         }
     }
     resetGame() {
-         for (var i = 0; i < this.board.length; i++) {
-            this.board[i] = ''
-        }
+        //  for (var i = 0; i < this.board.length; i++) {
+        ticTacToe.board[0] = ''
+        ticTacToe.board[1] = ''
+        ticTacToe.board[2] = ''
+        ticTacToe.board[3] = ''
+        ticTacToe.board[4] = ''
+        ticTacToe.board[5] = ''
+        ticTacToe.board[6] = ''
+        ticTacToe.board[7] = ''
+        ticTacToe.board[8] = ''
+        topLeft.innerText = ''
+        topMiddle.innerText = ''
+        topRight.innerText = ''
+        middleLeft.innerText = ''
+        middleMiddle.innerText = ''
+        middleRight.innerText = ''
+        bottomLeft.innerText = ''
+        bottomMiddle.innerText = ''
+        bottomRight.innerText = ''
+        ticTacToe.goesFirst()
+        playerPromt.innerText = `It's ${ticTacToe.startingPlayer.token} turn`
+        // }
     }
 }
