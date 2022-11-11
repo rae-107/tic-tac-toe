@@ -9,25 +9,29 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <section class="player-sides star-side">
+    <section class="player-sides player-one-side">
+        <h2>🌞</h2>
         <h2>Wins</h2>
+        <h2 id="playerOneScore"></h2>
     </section>
     <main class="board">
-        <h1>It's eithers turn</h1>
+        <h1></h1>
         <section class="board-grid" id="boardGrid">
-            <div class="boxes left-verticle top-horizontal back-diagnol" id="topLeft">0</div>
-            <div class="boxes left-top-verticle top-horizontal" id="topMiddle">1</div>
-            <div class="boxes left-verticle top-horizontal forward-diagnol" id="topRight">2</div>
-            <div class="boxes middle-verticle middle-horizontal" id="middleLeft">3</div>
-            <div class="boxes middle-verticle middle-horizontal back-diagnol forward-diagnol" id="middleMiddle">4</div>
-            <div class="boxes middle-verticle middle-horizontal" id="middleRight">5</div>
-            <div class="boxes right-verticle bottom-horizontal forward-diagnol" id="bottomLeft">6</div>
-            <div class="boxes right-verticle bottom-horizontal" id="bottomMiddle">7</div>
-            <div class="boxes right-verticle bottom-horizontal back-diagnol" id="bottomRight">8</div>
+            <div class="boxes" id="topLeft"></div>
+            <div class="boxes" id="topMiddle"></div>
+            <div class="boxes" id="topRight"></div>
+            <div class="boxes" id="middleLeft"></div>
+            <div class="boxes" id="middleMiddle"></div>
+            <div class="boxes" id="middleRight"></div>
+            <div class="boxes" id="bottomLeft"></div>
+            <div class="boxes" id="bottomMiddle"></div>
+            <div class="boxes" id="bottomRight"></div>
         </section> 
     </main>
-    <section class="player-sides heart-side">
+    <section class="player-sides player-two-side">
+        <h2>🌝</h2>
         <h2>Wins</h2>
+        <h2 id="playerTwoScore"></h2>
     </section>
     <script src="player.js"></script>
     <script src="game.js"></script>
