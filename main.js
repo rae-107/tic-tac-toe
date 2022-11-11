@@ -1,5 +1,6 @@
 // Dom related JavaScript
 var ticTacToe = new Game()
+
 // query selectors
 var gameBoard = document.querySelector('#boardGrid')
 var topLeft = document.querySelector('#topLeft')
@@ -56,11 +57,14 @@ function displayGameBoard(event) {
 }
 
 function editPrompt() {
-    
-    if (ticTacToe.decideWinner() === `${ticTacToe.otherPlayer.token} wins`) {
+    if (ticTacToe.decideWinner(0, 1, 2) === true || ticTacToe.decideWinner(3, 4, 5) === true || ticTacToe.decideWinner(6, 7, 8) === true || ticTacToe.decideWinner(0, 3, 6) === true || ticTacToe.decideWinner(1, 4, 7) === true || ticTacToe.decideWinner(2, 5, 8) === true || ticTacToe.decideWinner(0, 4, 8) === true || ticTacToe.decideWinner(2, 4, 6) === true) {
         updatePlayerWins()
         playerPromt.innerText = `${ticTacToe.otherPlayer.token} wins`
-    } else {
+    } 
+    else if (ticTacToe.decideDraw() === 9) {
+        playerPromt.innerText = `It's a draw!`
+    } 
+    else {
         playerPromt.innerText = `It's ${ticTacToe.currentPlayer.token} turn`
     }
 }
