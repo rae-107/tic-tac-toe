@@ -13,6 +13,8 @@ var bottomMiddle = document.querySelector('#bottomMiddle')
 var bottomRight = document.querySelector('#bottomRight')
 var playerPromt = document.querySelector('h1')
 var allBoxes = document.querySelector('.boxes')
+var playerOneSide = document.querySelector('#playerOneScore')
+var playerTwoSide = document.querySelector('#playerTwoScore')
 
 // event listeners
 gameBoard.addEventListener('click', function(event) {
@@ -54,9 +56,16 @@ function displayGameBoard(event) {
 }
 
 function editPrompt() {
+    
     if (ticTacToe.decideWinner() === `${ticTacToe.otherPlayer.token} wins`) {
+        updatePlayerWins()
         playerPromt.innerText = `${ticTacToe.otherPlayer.token} wins`
     } else {
         playerPromt.innerText = `It's ${ticTacToe.currentPlayer.token} turn`
     }
+}
+
+function updatePlayerWins() {
+    playerOneSide.innerText = ticTacToe.playerOne.wins
+    playerTwoSide.innerText = ticTacToe.playerTwo.wins
 }
