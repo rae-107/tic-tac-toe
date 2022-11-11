@@ -22,9 +22,7 @@ gameBoard.addEventListener('click', function(event) {
     displayGameBoard(event)
 })
 
-
 // functions
-
 function displayGameBoard(event) {
     if (event.target.id === 'topLeft') {
         ticTacToe.playToken(0)
@@ -55,20 +53,29 @@ function displayGameBoard(event) {
         bottomRight.innerText = ticTacToe.board[8]
     }
 }
-
 function editPrompt() {
-    if (ticTacToe.decideWinner(0, 1, 2) === true || ticTacToe.decideWinner(3, 4, 5) === true || ticTacToe.decideWinner(6, 7, 8) === true || ticTacToe.decideWinner(0, 3, 6) === true || ticTacToe.decideWinner(1, 4, 7) === true || ticTacToe.decideWinner(2, 5, 8) === true || ticTacToe.decideWinner(0, 4, 8) === true || ticTacToe.decideWinner(2, 4, 6) === true) {
+    if (ticTacToe.decideWinner(0, 1, 2) === true ||
+        ticTacToe.decideWinner(3, 4, 5) === true || 
+        ticTacToe.decideWinner(6, 7, 8) === true || 
+        ticTacToe.decideWinner(0, 3, 6) === true || 
+        ticTacToe.decideWinner(1, 4, 7) === true || 
+        ticTacToe.decideWinner(2, 5, 8) === true || 
+        ticTacToe.decideWinner(0, 4, 8) === true || 
+        ticTacToe.decideWinner(2, 4, 6) === true) {
         updatePlayerWins()
         playerPromt.innerText = `${ticTacToe.otherPlayer.token} wins`
+        ticTacToe.tileCounter = 0
+        setTimeout(ticTacToe.resetGame, 1500)
     } 
     else if (ticTacToe.decideDraw() === 9) {
         playerPromt.innerText = `It's a draw!`
+        ticTacToe.tileCounter = 0
+        setTimeout(ticTacToe.resetGame, 1500)
     } 
     else {
         playerPromt.innerText = `It's ${ticTacToe.currentPlayer.token} turn`
     }
 }
-
 function updatePlayerWins() {
     playerOneSide.innerText = ticTacToe.playerOne.wins
     playerTwoSide.innerText = ticTacToe.playerTwo.wins

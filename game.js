@@ -4,16 +4,30 @@ class Game {
         this.playerTwo = new Player(2, '🌝')
         this.currentPlayer = this.playerOne
         this.otherPlayer = this.playerTwo
-        this.board = ['','','','','','','','','']
-        this.drawCounter = 0
+        this.board = ['', '', '', '', '', '', '', '', '']
+        this.tileCounter = 0
+        this.startingPlayer = this.playerOne
+    }
+    goesFirst() {
+        if (this.startingPlayer === this.playerOne) {
+            this.otherPlayer = this.playerOne
+            this.startingPlayer = this.playerTwo
+            this.currentPlayer = this.startingPlayer
+        } else {
+            this.otherPlayer = this.playerTwo
+            this.startingPlayer = this.playerOne
+            this.currentPlayer = this.startingPlayer
+        } 
     }
     playToken(i) {
-            if (this.board[i] !== this.playerOne.token && this.board[i] !== this.playerTwo.token) {
-            this.board[i] = this.currentPlayer.token
-            this.currentPlayersTurn()
-            editPrompt()
-            }
-    }
+        if (playerPromt.innerText === `${ticTacToe.otherPlayer.token} wins` || playerPromt.innerText === `${ticTacToe.currentPlayer.token} wins`) {
+       }
+       else if (this.board[i] !== this.playerOne.token && this.board[i] !== this.playerTwo.token) {
+           this.board[i] = this.currentPlayer.token
+           this.currentPlayersTurn()
+           editPrompt()
+       }
+   }
     currentPlayersTurn() {
         if (this.currentPlayer === this.playerOne) {
             this.currentPlayer = this.playerTwo
@@ -24,22 +38,43 @@ class Game {
         }
     }
     decideWinner(one, two, three) {
-        if (this.board[one] === this.otherPlayer.token && this.board[two] === this.otherPlayer.token && this.board[three] === this.otherPlayer.token) {
-            this.otherPlayer.increaseWins()
+        if (this.board[one] === this.otherPlayer.token && 
+            this.board[two] === this.otherPlayer.token && 
+            this.board[three] === this.otherPlayer.token) {
+            this.otherPlayer.increaseWins()   
             return true
-        } 
+        }
     }
     decideDraw() {
         for (var i = 0; i < this.board.length; i++) {
             if (this.board[i] === this.playerOne.token || this.board[i] === this.playerTwo.token) {
-                this.drawCounter++
-                return this.drawCounter
+                this.tileCounter++
+                return this.tileCounter
             }
         }
     }
     resetGame() {
-         for (var i = 0; i < this.board.length; i++) {
-            this.board[i] = ''
-        }
+        //  for (var i = 0; i < this.board.length; i++) {
+        ticTacToe.board[0] = ''
+        ticTacToe.board[1] = ''
+        ticTacToe.board[2] = ''
+        ticTacToe.board[3] = ''
+        ticTacToe.board[4] = ''
+        ticTacToe.board[5] = ''
+        ticTacToe.board[6] = ''
+        ticTacToe.board[7] = ''
+        ticTacToe.board[8] = ''
+        topLeft.innerText = ''
+        topMiddle.innerText = ''
+        topRight.innerText = ''
+        middleLeft.innerText = ''
+        middleMiddle.innerText = ''
+        middleRight.innerText = ''
+        bottomLeft.innerText = ''
+        bottomMiddle.innerText = ''
+        bottomRight.innerText = ''
+        ticTacToe.goesFirst()
+        playerPromt.innerText = `It's ${ticTacToe.startingPlayer.token} turn`
+        // }
     }
 }
