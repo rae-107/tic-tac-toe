@@ -63,7 +63,7 @@ function editPrompt() {
         ticTacToe.decideWinner(0, 4, 8) === true || 
         ticTacToe.decideWinner(2, 4, 6) === true) {
         updatePlayerWins()
-        playerPromt.innerText = `${ticTacToe.otherPlayer.token} wins`
+        playerPromt.innerText = `${ticTacToe.otherPlayer.token} Wins`
         ticTacToe.tileCounter = 0
         setTimeout(ticTacToe.resetGame, 1500)
     } 

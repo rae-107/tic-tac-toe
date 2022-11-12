@@ -1,7 +1,7 @@
 class Game {
     constructor() {
-        this.playerOne = new Player(1, '🌞')
-        this.playerTwo = new Player(2, '🌝')
+        this.playerOne = new Player(1, '🌻')
+        this.playerTwo = new Player(2, '🥀')
         this.currentPlayer = this.playerOne
         this.otherPlayer = this.playerTwo
         this.board = ['', '', '', '', '', '', '', '', '']
@@ -20,7 +20,7 @@ class Game {
         } 
     }
     playToken(i) {
-        if (playerPromt.innerText === `${ticTacToe.otherPlayer.token} wins` || playerPromt.innerText === `${ticTacToe.currentPlayer.token} wins`) {
+        if (playerPromt.innerText === `${ticTacToe.otherPlayer.token} Wins` || playerPromt.innerText === `${ticTacToe.currentPlayer.token} Wins`) {
        }
        else if (this.board[i] !== this.playerOne.token && this.board[i] !== this.playerTwo.token) {
            this.board[i] = this.currentPlayer.token
