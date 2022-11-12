@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <section class="player-sides player-one-side">
-        <h2 class="player-token">🌻</h2>
+    <section class="player-sides">
+        <h2>🌻</h2>
         <h2>Wins</h2>
-        <h2 id="playerOneScore"></h2>
+        <h2 id="playerOneScore">0</h2>
     </section>
     <main class="board">
-        <h1></h1>
-        <section class="board-grid" id="boardGrid">
+        <h1 id="playerPrompt"></h1>
+        <article class="board-grid" id="boardGrid">
             <div class="boxes" id="topLeft"></div>
             <div class="boxes" id="topMiddle"></div>
             <div class="boxes" id="topRight"></div>
@@ -27,12 +26,12 @@
             <div class="boxes" id="bottomLeft"></div>
             <div class="boxes" id="bottomMiddle"></div>
             <div class="boxes" id="bottomRight"></div>
-        </section> 
+        </article> 
     </main>
-    <section class="player-sides player-two-side">
-        <h2 class="player-token">🥀</h2>
+    <section class="player-sides">
+        <h2>🥀</h2>
         <h2>Wins</h2>
-        <h2 id="playerTwoScore"></h2>
+        <h2 id="playerTwoScore">0</h2>
     </section>
     <script src="player.js"></script>
     <script src="game.js"></script>
