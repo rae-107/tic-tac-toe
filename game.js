@@ -8,6 +8,7 @@ class Game {
     this.currentPlayer = this.playerOne
     this.tileCounter = 0
   }
+
   goesFirst() {
     if (this.startingPlayer === this.playerOne) {
       this.secondPlayer = this.playerOne
@@ -19,6 +20,7 @@ class Game {
       this.currentPlayer = this.startingPlayer
     }
   }
+
   currentPlayersTurn() {
     if (this.currentPlayer === this.playerOne) {
       this.currentPlayer = this.playerTwo
@@ -28,33 +30,36 @@ class Game {
       this.secondPlayer = this.playerTwo
     }
   }
+
   playToken(i) {
-    if (playerPromt.innerText.includes('Wins')) {
-      //should i delete this line
-    } else if (this.board[i] !== this.playerOne.token && this.board[i] !== this.playerTwo.token) {
+    if (this.board[i] !== this.playerOne.token &&
+      this.board[i] !== this.playerTwo.token) {
       this.board[i] = this.currentPlayer.token
       this.currentPlayersTurn()
-      editPrompt()
+      this.tileCounter++
     }
   }
+
   decideWinner(one, two, three) {
-    if (this.board[one] === this.secondPlayer.token && this.board[two] === this.secondPlayer.token && this.board[three] === this.secondPlayer.token) {
+    if (this.board[one] === this.secondPlayer.token &&
+      this.board[two] === this.secondPlayer.token &&
+      this.board[three] === this.secondPlayer.token) {
       this.secondPlayer.increaseWins()
       return true
     }
   }
+
   decideDraw() {
     for (var i = 0; i < this.board.length; i++) {
-      if (this.board[i] === this.playerOne.token || this.board[i] === this.playerTwo.token) {
-        this.tileCounter++
+      if (this.board[i] === this.playerOne.token ||
+        this.board[i] === this.playerTwo.token) {
         return this.tileCounter
       }
     }
   }
+
   resetGame() {
-    resetGameBoard()
     ticTacToe.goesFirst()
-    playerPromt.innerText = `It's ${ticTacToe.startingPlayer.token} turn`
     for (var i = 0; i < ticTacToe.board.length; i++) {
       ticTacToe.board[i] = ''
     }
