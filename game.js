@@ -1,8 +1,8 @@
 class Game {
   constructor() {
     this.board = ['', '', '', '', '', '', '', '', '']
-    this.playerOne = new Player('one', '🌻')
-    this.playerTwo = new Player('two', '🥀')
+    this.playerOne = new Player('🌻')
+    this.playerTwo = new Player('🥀')
     this.startingPlayer = this.playerOne
     this.secondPlayer = this.playerTwo
     this.currentPlayer = this.playerOne

@@ -20,7 +20,6 @@ gameBoard.addEventListener('click', function (event) {
 })
 
 function displayGameBoard(event) {
-
   if (event.target.id === 'topLeft' && playerPromt.innerText.includes('turn')) {
     ticTacToe.playToken(0)
     editPrompt()
