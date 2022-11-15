@@ -12,7 +12,7 @@ I built a webpage that successfully plays Tic-Tac-Toe with two players. The user
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
-![Video of app](Tic-Tac-Toe%20-%2015%20November%202022%2011.00.21%20AM.mp4)
+![Tic-Tac-Toe](https://user-images.githubusercontent.com/113261334/201996639-f630d6a6-d4df-4ba5-b85e-a452c754cada.mp4)
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
