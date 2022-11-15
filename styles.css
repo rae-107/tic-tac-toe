@@ -1,102 +1,77 @@
-/* Global */
 * {
-    color: darkslategray;
-    /* color: #d4af37; */
-    margin: 0;
-    padding: 0;
-    font-family: 'Fauna One', serif;
+  color: darkslategray;
+  font-family: 'Fauna One', serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
+
 /* Player sides */
 .player-sides {
-    font-size: 20px;
-    height: 100vh;
-    width: 25%;
-    display: flex;
-    justify-content: space-around;
-    background-image: linear-gradient(
-  0deg,
-  hsl(196deg 76% 53%) 0%,
-  hsl(204deg 80% 65%) 10%,
-  hsl(215deg 83% 74%) 20%,
-  hsl(231deg 80% 81%) 30%,
-  hsl(257deg 72% 83%) 40%,
-  hsl(284deg 61% 83%) 50%,
-  hsl(227deg 100% 85%) 60%,
-  hsl(196deg 100% 67%) 70%,
-  hsl(188deg 100% 50%) 80%,
-  hsl(177deg 100% 45%) 90%,
-  hsl(155deg 78% 53%) 100%
-);
-    /* background-color: olive; */
+  align-items: center;
+  background-image: linear-gradient(0deg,
+    hsl(103deg 30% 68%) 0%,
+    hsl(103deg 28% 66%) 6%,
+    hsl(102deg 27% 64%) 12%,
+    hsl(102deg 26% 62%) 18%,
+    hsl(102deg 25% 60%) 24%,
+    hsl(102deg 23% 58%) 29%,
+    hsl(102deg 23% 56%) 35%,
+    hsl(102deg 22% 54%) 41%,
+    hsl(102deg 21% 52%) 47%,
+    hsl(102deg 20% 50%) 53%,
+    hsl(102deg 21% 48%) 59%,
+    hsl(103deg 22% 46%) 65%,
+    hsl(103deg 23% 44%) 71%,
+    hsl(103deg 24% 42%) 76%,
+    hsl(103deg 25% 40%) 82%,
+    hsl(103deg 27% 38%) 88%,
+    hsl(103deg 28% 36%) 94%,
+    hsl(103deg 30% 34%) 100%);
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  height: 100vh;
+  width: 25%;
 }
 
+h1,
 h2 {
-    margin-top: 30px;
-}
-
-.star-side {
-    /* border: 1px solid khaki; */
-}
-
-.heart-side {
-    /* border: 1px solid lightcoral; */
+  margin-top: 30px;
 }
 
 /* Main board */
-h1 {
-    margin-top: 60px;
-}
-
 .board {
-    background-color: gainsboro;
-    height: 100vh;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  align-items: center;
+  background-color: #FCFBED;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+  width: 70%;
 }
 
 .board-grid {
-    background-image: linear-gradient(
-  0deg,
-  hsl(196deg 76% 53%) 0%,
-  hsl(204deg 80% 65%) 10%,
-  hsl(215deg 83% 74%) 20%,
-  hsl(231deg 80% 81%) 30%,
-  hsl(257deg 72% 83%) 40%,
-  hsl(284deg 61% 83%) 50%,
-  hsl(227deg 100% 85%) 60%,
-  hsl(196deg 100% 67%) 70%,
-  hsl(188deg 100% 50%) 80%,
-  hsl(177deg 100% 45%) 90%,
-  hsl(155deg 78% 53%) 100%
-);
-/* background-color: #d4af37; */
-    display: grid;
-    height: 60vh;
-    width: 70%;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto; 
-    gap: 4px;
+  background-color: #CCAD00;
+  display: grid;
+  gap: 3px;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  height: 60vh;
+  width: 70%;
 }
 
-
-.boxes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* border: 1px solid rebeccapurple; */
-    background-color: gainsboro;
-    height: 100%;
-    width: 100%;
-    font-size: 20px;
-    
+div {
+  align-items: center;
+  background-color: #FCFBED;
+  display: flex;
+  font-size: 40px;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
 }
-
