@@ -24,12 +24,12 @@ I am a mod 1 student and this is my final project. I have worked approximately 2
 
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
-1. Rae's [LinkedIn](https://www.linkedin.com/in/rae-gebhart-681449254/) [Github](https://github.com/rae-107)
+Rae's [LinkedIn](https://www.linkedin.com/in/rae-gebhart-681449254/) [Github](https://github.com/rae-107)
 
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
-- DRY JavaScript
-- Event delegation to handle similar event listeners
+- Writting DRY JavaScript
+- Using event delegation to handle similar event listeners
 - Understand the difference between the data model and how the data is displayed on the DOM
 - Iterate through/filter DOM elements using for loops
 - Use your problem solving process to break down large problems, solve things step by step, and trust yourself to not rely on an outside “answer” to a logical challenge
